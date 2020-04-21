@@ -11,6 +11,7 @@ from matplotlib import pyplot as plt
 
 import torch
 from torchvision import transforms
+import torchvision.models as models
 from torch.autograd import Variable
 import pytorch_segmentation_detection.models.resnet_dilated as resnet_dilated
 
@@ -39,7 +40,8 @@ img = Variable(img.to(device))
 
 model_path = sys.argv[1]
 
-fcn = resnet_dilated.Resnet34_8s(num_classes=21, dilation=False)
+fcn = resnet_dilated.ResNetDilated_s(resnet_base=models.resnet34, resnet_name="resnet34_8s", num_classes=21, dilation=False)
+
 fcn.load_state_dict(torch.load(model_path, map_location = torch.device(device)))
 fcn.to(device)
 fcn.eval()
