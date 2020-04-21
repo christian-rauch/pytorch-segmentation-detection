@@ -1,7 +1,7 @@
 [submodule "vision"]
 	path = vision
-	url = https://github.com/warmspringwinds/vision
-	branch = fully_conv_resnet
+	url = https://github.com/christian-rauch/vision.git
+	branch = resnet_fconv_0.5
 [submodule "synchronized_batchnorm"]
 	path = synchronized_batchnorm
 	url = git@github.com:warmspringwinds/Synchronized-BatchNorm-PyTorch.git
